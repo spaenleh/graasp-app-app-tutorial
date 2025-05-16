@@ -31,7 +31,7 @@ const PlayerView = (): JSX.Element => {
   };
 
   useEffect(() => {
-    if (answerData) {
+    if (answerData && answerData.length > 0) {
       setAnswer(answerData[answerData.length - 1].data.value);
     }
   }, [answerData]);
