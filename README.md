@@ -89,10 +89,11 @@ If you choose to deploy your app with the provided GitHubActions workflows you w
 Create a `.env.development` file with the following content:
 
 ```bash
-VITE_PORT=3005
+VITE_PORT=3012
 VITE_API_HOST=http://localhost:3000
-VITE_ENABLE_MOCK_API=true
-VITE_GRAASP_APP_KEY=45678-677889
+# deactivate the mock api since we want to use the real backend to develop
+# VITE_ENABLE_MOCK_API=true
+VITE_GRAASP_APP_KEY=3211293d-5e8e-4f5a-9576-7df30c2175c3
 VITE_VERSION=latest
 ```
 

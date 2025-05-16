@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Close } from '@mui/icons-material';
 import {
+  Box,
   Button,
   IconButton,
   Stack,
@@ -11,7 +12,6 @@ import {
 } from '@mui/material';
 
 import { hooks, mutations } from '@/config/queryClient';
-import { PLAYER_VIEW_CY } from '@/config/selectors';
 
 const PlayerView = (): JSX.Element => {
   const { t } = useTranslation();
@@ -41,14 +41,14 @@ const PlayerView = (): JSX.Element => {
   };
 
   return (
-    <div data-cy={PLAYER_VIEW_CY} style={{ paddingBottom: '100px' }}>
-      <Stack direction="row">
+    <Box style={{ paddingBottom: '100px' }}>
+      <Stack direction="row" alignItems="center" gap={2}>
         <Typography>{t('Hello')}</Typography>
         <TextField value={answer} onChange={handleChange} />
         <Button onClick={handleSubmit}>Submit</Button>
       </Stack>
       {answerData?.map(({ id, data }) => (
-        <Stack key={id} direction="row">
+        <Stack key={id} direction="row" alignItems="center">
           <Typography>{data.value}</Typography>
           <IconButton
             onClick={() => {
@@ -59,7 +59,7 @@ const PlayerView = (): JSX.Element => {
           </IconButton>
         </Stack>
       ))}
-    </div>
+    </Box>
   );
 };
 export default PlayerView;

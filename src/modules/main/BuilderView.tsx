@@ -2,8 +2,6 @@ import { Box, Button, Stack, Typography } from '@mui/material';
 
 import { useLocalContext } from '@graasp/apps-query-client';
 
-import { BUILDER_VIEW_CY } from '@/config/selectors';
-
 import { hooks, mutations } from '../../config/queryClient';
 
 const AppSettingsDisplay = (): JSX.Element => {
@@ -44,7 +42,7 @@ const BuilderView = (): JSX.Element => {
   const { mutate: postAppSetting } = mutations.usePostAppSetting();
 
   return (
-    <div data-cy={BUILDER_VIEW_CY}>
+    <Box>
       Builder as {permission}
       <Stack direction="column" spacing={2}>
         <Stack direction="row" justifyContent="center" spacing={1}>
@@ -98,7 +96,7 @@ const BuilderView = (): JSX.Element => {
         <AppSettingsDisplay />
         <AppActionsDisplay />
       </Stack>
-    </div>
+    </Box>
   );
 };
 export default BuilderView;

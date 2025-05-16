@@ -4,6 +4,7 @@
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext", "ES2021.String"],
     "allowJs": false,
+    "noImplicitAny": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -16,7 +17,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "typeRoots": ["node_modules", "node_modules/@types", "./src/@types"],
-    "types": ["vite/client", "cypress"],
+    "types": ["vite/client"],
     "baseUrl": "./src",
     "paths": {
       "@/*": ["./*"]

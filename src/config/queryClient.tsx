@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 
 import {
-  Notifier,
+  type Notifier,
   ROUTINES,
   configureQueryClient,
 } from '@graasp/apps-query-client';
@@ -10,7 +10,7 @@ import type { AxiosError } from 'axios';
 
 import { InfoToast, NetworkErrorToast } from '@/modules/common/CustomToasts';
 
-import { API_HOST, GRAASP_APP_KEY, MOCK_API } from './env';
+import { API_HOST, GRAASP_APP_KEY } from './env';
 
 const {
   deleteAppDataRoutine,
@@ -81,7 +81,7 @@ const {
   // avoid refetching when same data are closely fetched
   staleTime: 1000, // ms
   GRAASP_APP_KEY,
-  isStandalone: MOCK_API,
+  isStandalone: false,
 });
 
 export {

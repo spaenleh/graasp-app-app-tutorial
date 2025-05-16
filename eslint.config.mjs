@@ -27,22 +27,19 @@ export default [
       '**/coverage',
       '**/node_modules',
       '.yarn/.cache',
-      '**/.husky',
       '**/.nyc_output',
       '**/.yarn',
-      '**/commitlint.config.cjs',
+      'eslint.config.mjs',
     ],
   },
   ...fixupConfigRules(
     compat.extends(
-      'airbnb',
-      'airbnb-typescript',
       'plugin:import/typescript',
       'prettier',
-      'plugin:cypress/recommended',
       'plugin:react/recommended',
       'plugin:react-hooks/recommended',
       'plugin:@typescript-eslint/recommended',
+      'plugin:import/recommended',
     ),
   ),
   {
@@ -131,7 +128,7 @@ export default [
       ],
 
       '@typescript-eslint/explicit-function-return-type': [
-        'error',
+        'warn',
         {
           allowExpressions: true,
           allowHigherOrderFunctions: true,

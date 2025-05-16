@@ -3,14 +3,13 @@ import { Box, Button, Stack, Typography } from '@mui/material';
 import { useLocalContext } from '@graasp/apps-query-client';
 
 import { hooks, mutations } from '@/config/queryClient';
-import { ANALYTICS_VIEW_CY } from '@/config/selectors';
 
 const AnalyticsView = (): JSX.Element => {
   const { permission } = useLocalContext();
   const { data: appActions, refetch } = hooks.useAppActions();
   const { mutate: postAppAction } = mutations.usePostAppAction();
   return (
-    <div data-cy={ANALYTICS_VIEW_CY}>
+    <div>
       Analytics as {permission}
       <Stack direction="column" spacing={2}>
         <Stack direction="row" justifyContent="center" spacing={1}>

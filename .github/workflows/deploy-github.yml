@@ -27,8 +27,6 @@ jobs:
         env:
           VITE_API_HOST: ${{ vars.VITE_API_HOST }}
           VITE_GRAASP_APP_KEY: ${{ secrets.APP_KEY }}
-          VITE_SENTRY_ENV: production
-          VITE_SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
           VITE_VERSION: github-${{ github.sha }}
           # add any env variable needed by your app here
         run: yarn build
